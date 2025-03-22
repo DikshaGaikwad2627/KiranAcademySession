@@ -1,0 +1,64 @@
+package Method;
+	import java.util.Scanner;
+	public class Student {
+		static String name;
+		static int age,RollNo,sub1,sub2,sub3,sub4,sub5,total;
+		double marks,per;
+		public void accept(){
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter your name: ");
+			name=sc.next();
+			System.out.println("Enter your age: ");
+			 age=sc.nextInt();
+			System.out.println("Enter your RollNo: ");
+			 RollNo=sc.nextInt();
+			 System.out.println("Enter sub1 marks: ");
+			 sub1=sc.nextInt();
+			 System.out.println("Enter sub2 marks: ");
+			 sub2=sc.nextInt();
+			 System.out.println("Enter sub3 marks: ");
+			 sub3=sc.nextInt();
+			 System.out.println("Enter sub4 marks: ");
+			 sub4=sc.nextInt();
+			 System.out.println("Enter sub5 marks: ");
+			 sub5=sc.nextInt();
+		}
+		public void print() {
+			System.out.println("----STUDENT DETAILS----");
+			System.out.println("Name: " +name);
+			System.out.println("Age: " +age);
+			System.out.println("RollNo: " +RollNo);
+			System.out.println("sub1: "+sub1);
+			System.out.println("sub2: "+sub2);
+			System.out.println("sub3: "+sub3);
+			System.out.println("sub4: "+sub4);
+			System.out.println("sub5: "+sub5);
+		}
+	     public void total() {
+	    	 total=sub1+sub2+sub3+sub4+sub5;
+	    	 System.out.println("Total: "+total);
+	    	 percentage();
+	     }
+	     public void percentage() {
+	    	 per = total/5;
+	    	 System.out.println("Percentage: "+per);
+	    	 grade();
+	     }
+	     public void grade() {
+	    	 if(per>85) {
+	    		 System.out.println("A Grade");
+	    	 }else if (per>65 && per<=85){
+	    		 System.out.println("B Grade");
+	    	 }else if(per>=35 && per<=65) {
+	    		 System.out.println("C Grade");
+	    	 }else {
+	    		 System.out.println("Fail");
+	    	 }
+		 }
+public static void main(String[] args) {
+		Student s=new Student();
+		s.accept();
+		s.print();
+		s.total();
+	}
+}
